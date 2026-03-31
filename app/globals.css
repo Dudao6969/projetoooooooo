@@ -1,0 +1,209 @@
+@tailwind base;       
+@tailwind components; 
+@tailwind utilities;
+
+/* Reset geral do site */
+* {
+  margin: 0;          /* remove margens padrão */
+  padding: 0;         /* remove espaçamentos padrão */
+  box-sizing: border-box; /* cálculo mais previsível de tamanho */
+}
+
+/* Rolagem suave ao clicar em links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* COR PRINCIPAL DO SITE (FUNDO + TEXTO) */
+body {
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  /* MUDA AQUI PRA TROCAR O FUNDO DO SITE */
+
+  color: #f3e8ff;
+  /*  COR PADRÃO DOS TEXTOS */
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  /* fonte padrão */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================= */
+/* SCROLLBAR (barra lateral) */
+/* ========================= */
+
+::-webkit-scrollbar {
+  width: 10px; /* largura da barra */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  /*  fundo da barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0069cc;
+  /*  cor do negocio de scroll */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #33a7ea;
+  /*  cor quando passa o mouse */
+}
+
+/* ========================= */
+/* ANIMAÇÕES */
+/* ========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* começa um pouco abaixo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* posição normal */
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* vem da esquerda */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px); /* vem da direita */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Classes prontas pra usar animação */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+/* ========================= */
+/* BOTÕES */
+/* ========================= */
+
+/* BOTÃO PRINCIPAL (roxo com brilho) */
+.btn-primary {
+  @apply px-6 py-3 
+  bg-gradient-to-r from-blue-600 to-blue-700
+  /*  COR PRINCIPAL DO BOTÃO */
+
+  text-white font-semibold rounded-lg 
+  transition-all duration-300 
+  hover:shadow-lg hover:shadow-blue-600/50 
+  active:scale-95;
+}
+
+/* BOTÃO SECUNDÁRIO */
+.btn-secondary {
+  @apply px-6 py-3 
+  bg-blue-900/30 
+  border-2 border-blue-600
+  /*  BORDA E COR DO BOTÃO */
+
+  text-purple-200 
+  font-semibold rounded-lg 
+  transition-all duration-300 
+  hover:bg-blue-900/50 
+  active:scale-95;
+}
+
+/* ========================= */
+/* CARD DE JOGO */
+/* ========================= */
+
+.card-game {
+  @apply bg-dark-card 
+  /*  FUNDO DO CARD */
+
+  border border-dark-border 
+  /*  BORDA DO CARD */
+
+  rounded-lg overflow-hidden 
+  transition-all duration-300 
+
+  hover:shadow-xl 
+  hover:shadow-purple-600/20 
+  /*  brilho ao passar mouse */
+
+  hover:scale-105 
+  cursor-pointer;
+}
+
+/* ========================= */
+/* LINHA DIVISÓRIA */
+/* ========================= */
+
+.section-divider {
+  @apply h-px 
+  bg-gradient-to-r from-transparent via-blue-600 to-transparent
+  /*  COR DA LINHA */
+
+  opacity-30;
+}
+
+/* ========================= */
+/* TEXTO COM GRADIENTE */
+/* ========================= */
+
+.gradient-text {
+  @apply bg-gradient-to-r 
+  from-white via-white to-white
+  /* aqui é aonde mexe nas cores meio que da nosso titulo "acces game, deixei tudo white mas se quiser deixat gradiend é so colocar ai blue-500 etc" */
+
+  bg-clip-text text-transparent;
+}
+
+/* ========================= */
+/* SWIPER (CARROSSEL) */
+/* ========================= */
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-blue-500 
+  /* COR DAS SETAS */
+
+  hover:text-purple-400 
+  transition-colors;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-blue-900 opacity-50;
+  /* bolinhas inativas */
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-blue-500 opacity-100;
+  /*  bolinha ativa */
+}
+
+.swiper {
+  padding-bottom: 3rem !important;
+}
