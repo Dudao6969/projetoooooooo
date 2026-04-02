@@ -16,7 +16,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-dark flex items-center justify-center p-4">
+    <div
+  className="min-h-screen flex items-center justify-center bg-cover bg-center"
+  style={{ backgroundImage: "url('/background.jpg')" }}
+>
+
       <div className="w-full max-w-md">
         {/* Botão Voltar */}
         <Link 
@@ -123,7 +127,7 @@ export default function LoginPage() {
         </div>
 
         {/* Footer Info */}
-        <p className="text-center text-purple-500 text-xs mt-8">
+        <p className="text-center text-white text-xs mt-8">
           Ao entrar, você concorda com nossos Termos de Serviço e Política de Privacidade
         </p>
       </div>
