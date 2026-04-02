@@ -26,7 +26,10 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-dark flex items-center justify-center p-4">
+  <div
+  className="min-h-screen flex items-center justify-center bg-cover bg-center"
+  style={{ backgroundImage: "url('/background.jpg')" }}
+>
       <div className="w-full max-w-md">
         {/* Botão Voltar */}
         <Link 
@@ -183,7 +186,7 @@ export default function RegisterPage() {
         </div>
 
         {/* Footer Info */}
-        <p className="text-center text-purple-500 text-xs mt-8">
+        <p className="text-center text-white text-xs mt-8">
           Seus dados são protegidos e nunca serão compartilhados com terceiros
         </p>
       </div>
